@@ -134,7 +134,7 @@ class Zend_Captcha_ReCaptcha extends Zend_Captcha_Base
     public function __construct($options = null)
     {
         $this->setService(new Zend_Service_ReCaptcha());
-        $this->_serviceParams = $this->getService()->getParams();
+        $this->_serviceParams  = $this->getService()->getParams();
         $this->_serviceOptions = $this->getService()->getOptions();
 
         parent::__construct($options);
@@ -201,7 +201,7 @@ class Zend_Captcha_ReCaptcha extends Zend_Captcha_Base
      */
     public function generate()
     {
-        return "";
+        return '';
     }
 
     /**
@@ -269,6 +269,6 @@ class Zend_Captcha_ReCaptcha extends Zend_Captcha_Base
      */
     public function getDecorator()
     {
-        return "Captcha_ReCaptcha";
+        return 'Captcha_ReCaptcha';
     }
 }

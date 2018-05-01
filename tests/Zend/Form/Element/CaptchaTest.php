@@ -36,7 +36,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit\Framework\TestCase
         $this->element = new Zend_Form_Element_Captcha(
             'foo',
             array(
-                'captcha' => 'Dumb',
+                'captcha'        => 'Dumb',
                 'captchaOptions' => array(
                     'sessionClass' => 'Zend_Form_Element_CaptchaTest_SessionContainer',
                 ),
@@ -97,7 +97,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit\Framework\TestCase
                      'prefix' => 'Zend_Form_Element_CaptchaTest',
                      'path'   => dirname(__FILE__) . '/_files',
                  ),
-                 'captcha'    => 'Foo',
+                 'captcha' => 'Foo',
             )
         );
 
@@ -452,7 +452,7 @@ class Zend_Form_Element_CaptchaTest_SessionContainer
 
     public function __isset($name)
     {
-        if (('word' == $name) && (null !== self::$_word))  {
+        if (('word' == $name) && (null !== self::$_word)) {
             return true;
         }
 

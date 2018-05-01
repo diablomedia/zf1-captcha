@@ -46,7 +46,7 @@ class Zend_Form_Decorator_Captcha extends Zend_Form_Decorator_Abstract
             return $content;
         }
 
-        $view    = $element->getView();
+        $view = $element->getView();
         if (null === $view) {
             return $content;
         }
@@ -58,7 +58,7 @@ class Zend_Form_Decorator_Captcha extends Zend_Form_Decorator_Abstract
         $markup  = $captcha->render($view, $element);
         switch ($placement) {
             case 'PREPEND':
-                $content = $markup . $separator .  $content;
+                $content = $markup . $separator . $content;
                 break;
             case 'APPEND':
             default:

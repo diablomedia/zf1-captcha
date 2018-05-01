@@ -52,7 +52,7 @@ class Zend_Captcha_DumbTest extends PHPUnit\Framework\TestCase
                 )
             )
         );
-        $this->captcha =  $this->element->getCaptcha();
+        $this->captcha = $this->element->getCaptcha();
     }
 
     /**
@@ -128,7 +128,7 @@ class Zend_Captcha_DumbTest_SessionContainer
 
     public function __isset($name)
     {
-        if (('word' == $name) && (null !== self::$_word))  {
+        if (('word' == $name) && (null !== self::$_word)) {
             return true;
         }
 

@@ -41,8 +41,8 @@ class Zend_Form_Decorator_ReCaptchaTest extends PHPUnit\Framework\TestCase
      */
     public function setUp()
     {
-        $view = new Zend_View();
-        $this->element   = new Zend_Form_Element_Captcha('captcha', array(
+        $view          = new Zend_View();
+        $this->element = new Zend_Form_Element_Captcha('captcha', array(
             'captcha' => array(
                 'captcha' => 'ReCaptcha',
                 'privKey' => 'private',

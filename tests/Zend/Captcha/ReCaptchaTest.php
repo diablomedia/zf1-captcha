@@ -52,7 +52,7 @@ class Zend_Captcha_ReCaptchaTest extends PHPUnit\Framework\TestCase
                 )
             )
         );
-        $this->captcha =  $this->element->getCaptcha();
+        $this->captcha = $this->element->getCaptcha();
     }
 
     /**
@@ -79,7 +79,7 @@ class Zend_Captcha_ReCaptchaTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($compare, $test);
 
         $service = $captcha->getService();
-        $test = $service->getParams();
+        $test    = $service->getParams();
         $compare = array('ssl' => $options['ssl'], 'xhtml' => $options['xhtml']);
         foreach ($compare as $key => $value) {
             $this->assertArrayHasKey($key, $test);
@@ -99,7 +99,7 @@ class Zend_Captcha_ReCaptchaTest extends PHPUnit\Framework\TestCase
     public function testSetAndGetPublicAndPrivateKeys()
     {
         $captcha = new Zend_Captcha_ReCaptcha();
-        $pubKey = 'pubKey';
+        $pubKey  = 'pubKey';
         $privKey = 'privKey';
         $captcha->setPubkey($pubKey)
                 ->setPrivkey($privKey);
@@ -114,7 +114,7 @@ class Zend_Captcha_ReCaptchaTest extends PHPUnit\Framework\TestCase
     /** @group ZF-7654 */
     public function testConstructorShouldAllowSettingLangOptionOnServiceObject()
     {
-        $options = array('lang'=>'fr');
+        $options = array('lang' => 'fr');
         $captcha = new Zend_Captcha_ReCaptcha($options);
         $this->assertEquals('fr', $captcha->getService()->getOption('lang'));
     }
@@ -122,7 +122,7 @@ class Zend_Captcha_ReCaptchaTest extends PHPUnit\Framework\TestCase
     /** @group ZF-7654 */
     public function testConstructorShouldAllowSettingThemeOptionOnServiceObject()
     {
-        $options = array('theme'=>'black');
+        $options = array('theme' => 'black');
         $captcha = new Zend_Captcha_ReCaptcha($options);
         $this->assertEquals('black', $captcha->getService()->getOption('theme'));
     }
@@ -211,7 +211,7 @@ class Zend_Captcha_ReCaptchaTest_SessionContainer
 
     public function __isset($name)
     {
-        if (('word' == $name) && (null !== self::$_word))  {
+        if (('word' == $name) && (null !== self::$_word)) {
             return true;
         }
 

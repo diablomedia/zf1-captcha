@@ -143,7 +143,7 @@ class Zend_Form_Element_Captcha extends Zend_Form_Element_Xhtml
         }
         parent::setOptions($options);
 
-        if(null !== $captcha) {
+        if (null !== $captcha) {
             $this->setCaptcha($captcha, $captchaOptions);
         }
         return $this;
@@ -157,7 +157,7 @@ class Zend_Form_Element_Captcha extends Zend_Form_Element_Xhtml
      */
     public function render(Zend_View_Interface $view = null)
     {
-        $captcha    = $this->getCaptcha();
+        $captcha = $this->getCaptcha();
         $captcha->setName($this->getFullyQualifiedName());
 
         if (!$this->loadDefaultDecoratorsIsDisabled()) {
@@ -224,10 +224,10 @@ class Zend_Form_Element_Captcha extends Zend_Form_Element_Xhtml
         $type = strtoupper($type);
         switch ($type) {
             case null:
-                $loader = $this->getPluginLoader(self::CAPTCHA);
+                $loader      = $this->getPluginLoader(self::CAPTCHA);
                 $nsSeparator = (false !== strpos($prefix, '\\'))?'\\':'_';
-                $cPrefix = rtrim($prefix, $nsSeparator) . $nsSeparator . 'Captcha';
-                $cPath   = rtrim($path, '/\\') . '/Captcha';
+                $cPrefix     = rtrim($prefix, $nsSeparator) . $nsSeparator . 'Captcha';
+                $cPath       = rtrim($path, '/\\') . '/Captcha';
                 $loader->addPrefixPath($cPrefix, $cPath);
                 return parent::addPrefixPath($prefix, $path);
             case self::CAPTCHA:

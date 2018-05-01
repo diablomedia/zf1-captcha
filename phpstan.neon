@@ -1,4 +1,7 @@
 parameters:
+    excludes_analyse:
+        - %rootDir%/../../../vendor/*
+        - %rootDir%/../../../tests/*
     ignoreErrors:
         - '#Casting to int something that.s already int\.#'
         - '#Access to an undefined property Zend_Session_Namespace::\$word\.#'
