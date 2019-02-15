@@ -67,7 +67,7 @@ interface Zend_Captcha_Adapter extends Zend_Validate_Interface
     /**
      * Get optional private decorator for this captcha type
      *
-     * @return string
+     * @return string|null
      */
     public function getDecorator();
 }

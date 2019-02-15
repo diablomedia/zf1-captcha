@@ -484,6 +484,9 @@ class Zend_Captcha_Image extends Zend_Captcha_Word
         $img_file = $this->getImgDir() . $id . $this->getSuffix();
         if (empty($this->_startImage)) {
             $img = imagecreatetruecolor($w, $h);
+            if (!$img) {
+                throw new Zend_Captcha_Exception('Can not load start image');
+            }
         } else {
             $img = imagecreatefrompng($this->_startImage);
             if (!$img) {
@@ -496,8 +499,8 @@ class Zend_Captcha_Image extends Zend_Captcha_Word
         $bg_color   = imagecolorallocate($img, 255, 255, 255);
         imagefilledrectangle($img, 0, 0, $w - 1, $h - 1, $bg_color);
         $textbox = imageftbbox($fsize, 0, $font, $word);
-        $x       = ($w - ($textbox[2] - $textbox[0])) / 2;
-        $y       = ($h - ($textbox[7] - $textbox[1])) / 2;
+        $x       = (int) ($w - ($textbox[2] - $textbox[0])) / 2;
+        $y       = (int) ($h - ($textbox[7] - $textbox[1])) / 2;
         imagefttext($img, $fsize, 0, $x, $y, $text_color, $font, $word);
 
         // generate noise
@@ -510,6 +513,9 @@ class Zend_Captcha_Image extends Zend_Captcha_Word
 
         // transformed image
         $img2     = imagecreatetruecolor($w, $h);
+        if (!$img2) {
+            throw new Zend_Captcha_Exception('Can not load transformed image');
+        }
         $bg_color = imagecolorallocate($img2, 255, 255, 255);
         imagefilledrectangle($img2, 0, 0, $w - 1, $h - 1, $bg_color);
         // apply wave transforms
@@ -528,8 +534,8 @@ class Zend_Captcha_Image extends Zend_Captcha_Word
 
         for ($x = 0; $x < $w; $x++) {
             for ($y = 0; $y < $h; $y++) {
-                $sx = $x + (sin($x * $freq1 + $ph1) + sin($y * $freq3 + $ph3)) * $szx;
-                $sy = $y + (sin($x * $freq2 + $ph2) + sin($y * $freq4 + $ph4)) * $szy;
+                $sx = (int) ($x + (sin($x * $freq1 + $ph1) + sin($y * $freq3 + $ph3)) * $szx);
+                $sy = (int) ($y + (sin($x * $freq2 + $ph2) + sin($y * $freq4 + $ph4)) * $szy);
 
                 if ($sx < 0 || $sy < 0 || $sx >= $w - 1 || $sy >= $h - 1) {
                     continue;
@@ -552,10 +558,10 @@ class Zend_Captcha_Image extends Zend_Captcha_Word
                     $frac_x1 = 1 - $frac_x;
                     $frac_y1 = 1 - $frac_y;
 
-                    $newcolor = $color * $frac_x1 * $frac_y1
+                    $newcolor = (int) ($color * $frac_x1 * $frac_y1
                               + $color_x * $frac_x * $frac_y1
                               + $color_y * $frac_x1 * $frac_y
-                              + $color_xy * $frac_x * $frac_y;
+                              + $color_xy * $frac_x * $frac_y);
                 }
                 imagesetpixel($img2, $x, $y, imagecolorallocate($img2, $newcolor, $newcolor, $newcolor));
             }

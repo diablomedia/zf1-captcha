@@ -276,8 +276,8 @@ class Zend_Form_Element_Captcha extends Zend_Form_Element_Xhtml
         }
 
         $name     = $this->getFullyQualifiedName();
-        $root     = substr($name, 0, strpos($name, '['));
-        $segments = substr($name, strpos($name, '['));
+        $root     = substr($name, 0, (int) strpos($name, '['));
+        $segments = substr($name, (int) strpos($name, '['));
         $segments = ltrim($segments, '[');
         $segments = rtrim($segments, ']');
         $segments = explode('][', $segments);

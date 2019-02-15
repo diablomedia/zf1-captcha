@@ -153,7 +153,7 @@ class Zend_Captcha_FigletTest extends PHPUnit\Framework\TestCase
     {
         $this->assertEquals(
             $this->captcha->getName(),
-                    $this->element->getName()
+            $this->element->getName()
         );
     }
 
@@ -175,7 +175,7 @@ class Zend_Captcha_FigletTest extends PHPUnit\Framework\TestCase
         $this->testCaptchaIsRendered();
         $this->assertEquals(
             $this->captcha->getId(),
-                $this->element->getValue()
+            $this->element->getValue()
         );
     }
 

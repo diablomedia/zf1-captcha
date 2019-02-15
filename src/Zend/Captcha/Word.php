@@ -270,7 +270,6 @@ abstract class Zend_Captcha_Word extends Zend_Captcha_Base
     /**
      * Set session namespace object
      *
-     * @param  Zend_Session_Namespace $session
      * @return $this
      */
     public function setSession(Zend_Session_Namespace $session)
@@ -357,7 +356,7 @@ abstract class Zend_Captcha_Word extends Zend_Captcha_Base
 
     protected function _generateRandomId()
     {
-        return md5(Zend_Crypt_Math::randBytes(32));
+        return md5((string) Zend_Crypt_Math::randBytes(32));
     }
 
     /**

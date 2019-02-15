@@ -61,7 +61,7 @@ class Zend_Captcha_ImageTest extends PHPUnit\Framework\TestCase
         }
         $this->element = new Zend_Form_Element_Captcha(
             'captchaI',
-                    array('captcha' => array('Image',
+            array('captcha' => array('Image',
                                              'sessionClass' => 'Zend_Captcha_ImageTest_SessionContainer',
                                              'imgDir'       => $this->testDir,
                                              'font'         => dirname(__FILE__) . '/../Pdf/_fonts/Vera.ttf')
@@ -249,7 +249,7 @@ class Zend_Captcha_ImageTest extends PHPUnit\Framework\TestCase
     {
         $this->assertEquals(
             $this->captcha->getName(),
-        $this->element->getName()
+            $this->element->getName()
         );
     }
 
@@ -271,7 +271,7 @@ class Zend_Captcha_ImageTest extends PHPUnit\Framework\TestCase
         $this->testCaptchaIsRendered();
         $this->assertEquals(
             $this->captcha->getId(),
-        $this->element->getValue()
+            $this->element->getValue()
         );
     }
 

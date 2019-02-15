@@ -1,12 +1,21 @@
 parameters:
+    level: 6
+    paths:
+        - ./
     excludes_analyse:
         - %rootDir%/../../../vendor/*
         - %rootDir%/../../../tests/*
     ignoreErrors:
-        - '#Casting to int something that.s already int\.#'
         - '#Access to an undefined property Zend_Session_Namespace::\$word\.#'
         - '#Call to an undefined method Zend_View_Abstract::doctype\(\)\.#'
         - '#Call to an undefined method Zend_View_Interface::.+\(\)\.#'
         - '#Call to an undefined method Zend_Form\|Zend_Form_DisplayGroup\|Zend_Form_Element::get.+\(\)\.#'
-        - '#Parameter \#1 \$name of method Zend_Form_Element::_getDecorator\(\) expects string, array<string, Zend_Captcha_Adapter>\|string given\.#'
-        - '#Parameter \#2 \$options of method Zend_Form_Element::_getDecorator\(\) expects array\|null, array<string, Zend_Captcha_Adapter>\|string given\.#'
+        -
+            message: '#Left side of && is always true\.#'
+            path: %currentWorkingDirectory%/src/Zend/Captcha/Image.php
+        -
+            message: '#Negated boolean expression is always false\.#'
+            path: %currentWorkingDirectory%/src/Zend/Captcha/ReCaptcha.php
+        -
+            message: '#If condition is always true\.#'
+            path: %currentWorkingDirectory%/src/Zend/Captcha/Word.php
