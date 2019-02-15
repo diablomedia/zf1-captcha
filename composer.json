@@ -17,7 +17,7 @@
         "diablomedia/zendframework1-loader": "^1.0.0",
         "diablomedia/zendframework1-crypt": "^1.0.0",
         "diablomedia/zendframework1-text": "^1.0.0",
-        "diablomedia/zendframework1-form": "^1.0.0",
+        "diablomedia/zendframework1-form": "^1.0.2",
         "diablomedia/zendframework1-service-recaptcha": "^1.0.0",
         "diablomedia/zendframework1-session": "^1.0.0",
         "diablomedia/zendframework1-validate": "^1.0.0",
