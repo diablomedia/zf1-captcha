@@ -11,9 +11,6 @@ parameters:
         - '#Call to an undefined method Zend_View_Interface::.+\(\)\.#'
         - '#Call to an undefined method Zend_Form\|Zend_Form_DisplayGroup\|Zend_Form_Element::get.+\(\)\.#'
         -
-            message: '#Left side of && is always true\.#'
-            path: %currentWorkingDirectory%/src/Zend/Captcha/Image.php
-        -
             message: '#Negated boolean expression is always false\.#'
             path: %currentWorkingDirectory%/src/Zend/Captcha/ReCaptcha.php
         -

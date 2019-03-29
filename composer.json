@@ -8,8 +8,6 @@
     ],
     "homepage": "http://framework.zend.com/",
     "license": "BSD-3-Clause",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": ">=7.0.0",
         "diablomedia/zendframework1-exception": "^1.0.0",
