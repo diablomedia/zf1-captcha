@@ -160,6 +160,7 @@ abstract class Zend_Captcha_Base extends Zend_Validate_Abstract implements Zend_
      * Get optional decorator
      *
      * By default, return null, indicating no extra decorator needed.
+     * @return null|string
      */
     public function getDecorator()
     {

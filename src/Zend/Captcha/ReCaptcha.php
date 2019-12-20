@@ -35,13 +35,16 @@
  */
 class Zend_Captcha_ReCaptcha extends Zend_Captcha_Base
 {
-    /**@+
+    /**
      * ReCaptcha Field names
      * @var string
      */
     protected $_CHALLENGE = 'recaptcha_challenge_field';
+
+    /**
+     * @var string
+     */
     protected $_RESPONSE  = 'recaptcha_response_field';
-    /**@-*/
 
     /**
      * Recaptcha service object

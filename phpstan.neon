@@ -1,5 +1,6 @@
 parameters:
-    level: 6
+    checkMissingIterableValueType: false
+    level: 7
     paths:
         - ./
     excludes_analyse:
@@ -12,7 +13,10 @@ parameters:
         - '#Call to an undefined method Zend_Form\|Zend_Form_DisplayGroup\|Zend_Form_Element::get.+\(\)\.#'
         -
             message: '#Negated boolean expression is always false\.#'
-            path: %currentWorkingDirectory%/src/Zend/Captcha/ReCaptcha.php
+            path: './src/Zend/Captcha/ReCaptcha.php'
         -
             message: '#If condition is always true\.#'
-            path: %currentWorkingDirectory%/src/Zend/Captcha/Word.php
+            path: './src/Zend/Captcha/Word.php'
+        -
+            message: '#Parameter \#1 \$argument of class ReflectionClass constructor expects class-string<T of object>\|T of object, string given\.#'
+            path: './src/Zend/Form/Element/Captcha.php'

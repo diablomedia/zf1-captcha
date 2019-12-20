@@ -64,6 +64,7 @@ class Zend_Form_Element_Captcha extends Zend_Form_Element_Xhtml
      *
      * @param string|array|Zend_Captcha_Adapter $captcha
      * @param array $options
+     * @return $this
      */
     public function setCaptcha($captcha, $options = array())
     {
@@ -109,6 +110,7 @@ class Zend_Form_Element_Captcha extends Zend_Form_Element_Xhtml
      * - Zend_Config: Zend_Config with options for configuring element
      *
      * @param  string|array|Zend_Config $spec
+     * @param  array|Zend_Config $options
      * @return void
      */
     public function __construct($spec, $options = null)

@@ -33,14 +33,27 @@
  */
 abstract class Zend_Captcha_Word extends Zend_Captcha_Base
 {
-    /**#@+
-     * @var array Character sets
+    /**
+     * Character sets
+     *
+     * @var string[]
      */
     public static $V  = array('a', 'e', 'i', 'o', 'u', 'y');
+
+    /**
+     * @var string[]
+     */
     public static $VN = array('a', 'e', 'i', 'o', 'u', 'y','2','3','4','5','6','7','8','9');
+
+    /**
+     * @var string[]
+     */
     public static $C  = array('b','c','d','f','g','h','j','k','m','n','p','q','r','s','t','u','v','w','x','z');
+
+    /**
+     * @var string[]
+     */
     public static $CN = array('b','c','d','f','g','h','j','k','m','n','p','q','r','s','t','u','v','w','x','z','2','3','4','5','6','7','8','9');
-    /**#@-*/
 
     /**
      * Random session ID
@@ -354,6 +367,9 @@ abstract class Zend_Captcha_Word extends Zend_Captcha_Base
         return $id;
     }
 
+    /**
+     * @return string
+     */
     protected function _generateRandomId()
     {
         return md5((string) Zend_Crypt_Math::randBytes(32));

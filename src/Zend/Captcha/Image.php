@@ -455,6 +455,7 @@ class Zend_Captcha_Image extends Zend_Captcha_Word
      *
      * @param string $id   Captcha ID
      * @param string $word Captcha word
+     * @return void
      * @throws Zend_Captcha_Exception
      */
     protected function _generateImage($id, $word)
@@ -582,6 +583,8 @@ class Zend_Captcha_Image extends Zend_Captcha_Word
 
     /**
      * Remove old files from image directory
+     *
+     * @return void
      */
     protected function _gc()
     {
