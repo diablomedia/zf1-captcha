@@ -31,7 +31,7 @@
  */
 class Zend_Form_Element_CaptchaTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->element = new Zend_Form_Element_Captcha(
             'foo',
@@ -74,7 +74,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit\Framework\TestCase
         $this->element->addPrefixPath('My_Captcha', 'My/Captcha/', 'captcha');
         $loader = $this->element->getPluginLoader('captcha');
         $paths  = $loader->getPaths('My_Captcha');
-        $this->assertInternalType('array', $paths);
+        $this->assertIsArray($paths);
     }
 
     public function testAddingNullPrefixPathShouldAddCaptchaPrefixPath()
@@ -82,7 +82,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit\Framework\TestCase
         $this->element->addPrefixPath('My', 'My');
         $loader = $this->element->getPluginLoader('captcha');
         $paths  = $loader->getPaths('My_Captcha');
-        $this->assertInternalType('array', $paths);
+        $this->assertIsArray($paths);
     }
 
     /**
@@ -117,8 +117,8 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit\Framework\TestCase
         $form->addElement($this->element)
              ->setElementsBelongTo('bar');
         $html = $form->render(new Zend_View);
-        $this->assertContains('name="bar[foo', $html, $html);
-        $this->assertContains('id="bar-foo-', $html, $html);
+        $this->assertStringContainsString('name="bar[foo', $html, $html);
+        $this->assertStringContainsString('id="bar-foo-', $html, $html);
         $this->form = $form;
     }
 
@@ -149,7 +149,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit\Framework\TestCase
     public function testDefaultDecoratorsShouldIncludeErrorsDescriptionHtmlTagAndLabel()
     {
         $decorators = $this->element->getDecorators();
-        $this->assertInternalType('array', $decorators);
+        $this->assertIsArray($decorators);
         $this->assertArrayHasKey('Zend_Form_Decorator_Errors', $decorators, 'Missing Errors decorator' . var_export(array_keys($decorators), 1));
         $this->assertArrayHasKey('Zend_Form_Decorator_Description', $decorators, 'Missing Description decorator' . var_export(array_keys($decorators), 1));
         $this->assertArrayHasKey('Zend_Form_Decorator_HtmlTag', $decorators, 'Missing HtmlTag decorator' . var_export(array_keys($decorators), 1));
@@ -401,7 +401,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit\Framework\TestCase
         $this->element->addPrefixPath('My\Captcha', 'My/Captcha/', 'captcha');
         $loader = $this->element->getPluginLoader('captcha');
         $paths  = $loader->getPaths('My\Captcha');
-        $this->assertInternalType('array', $paths);
+        $this->assertIsArray($paths);
     }
 
     /**
@@ -416,7 +416,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit\Framework\TestCase
         $this->element->addPrefixPath('My\\', 'My/');
         $loader = $this->element->getPluginLoader('captcha');
         $paths  = $loader->getPaths('My\Captcha');
-        $this->assertInternalType('array', $paths);
+        $this->assertIsArray($paths);
     }
 }
 

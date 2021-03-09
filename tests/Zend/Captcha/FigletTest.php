@@ -37,7 +37,7 @@ class Zend_Captcha_FigletTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         if (isset($this->word)) {
             unset($this->word);
@@ -61,7 +61,7 @@ class Zend_Captcha_FigletTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function tearDown()
+    public function tearDown(): void
     {
     }
 
@@ -80,7 +80,7 @@ class Zend_Captcha_FigletTest extends PHPUnit\Framework\TestCase
     public function testCaptchaIsRendered()
     {
         $html = $this->element->render($this->getView());
-        $this->assertContains($this->element->getName(), $html);
+        $this->assertStringContainsString($this->element->getName(), $html);
     }
 
     public function testCaptchaHasIdAndInput()
@@ -110,7 +110,7 @@ class Zend_Captcha_FigletTest extends PHPUnit\Framework\TestCase
     {
         $ttl = $this->captcha->getTimeout();
         $this->assertNotEmpty($ttl);
-        $this->assertInternalType('int', $ttl);
+        $this->assertIsInt($ttl);
     }
 
     public function testCanSetTimeout()
@@ -125,7 +125,7 @@ class Zend_Captcha_FigletTest extends PHPUnit\Framework\TestCase
     {
         $id = $this->captcha->generate();
         $this->assertNotEmpty($id);
-        $this->assertInternalType('string', $id);
+        $this->assertIsString($id);
         $this->id = $id;
     }
 
@@ -134,7 +134,7 @@ class Zend_Captcha_FigletTest extends PHPUnit\Framework\TestCase
         $this->captcha->generate();
         $word = $this->captcha->getWord();
         $this->assertNotEmpty($word);
-        $this->assertInternalType('string', $word);
+        $this->assertIsString($word);
         $this->assertTrue(strlen($word) == 8);
         $this->word = $word;
     }
@@ -144,7 +144,7 @@ class Zend_Captcha_FigletTest extends PHPUnit\Framework\TestCase
         $this->captcha->setWordLen(4);
         $this->captcha->generate();
         $word = $this->captcha->getWord();
-        $this->assertInternalType('string', $word);
+        $this->assertIsString($word);
         $this->assertTrue(strlen($word) == 4);
         $this->word = $word;
     }

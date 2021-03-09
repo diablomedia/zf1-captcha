@@ -37,7 +37,7 @@ class Zend_Captcha_ReCaptchaTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         if (isset($this->word)) {
             unset($this->word);
@@ -61,7 +61,7 @@ class Zend_Captcha_ReCaptchaTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function tearDown()
+    public function tearDown(): void
     {
     }
 
@@ -157,8 +157,8 @@ class Zend_Captcha_ReCaptchaTest extends PHPUnit\Framework\TestCase
         ));
         $view = new Zend_View();
         $html = $captcha->render($view, $element);
-        $this->assertContains('contact[recaptcha_challenge_field]', $html);
-        $this->assertContains('contact[recaptcha_response_field]', $html);
+        $this->assertStringContainsString('contact[recaptcha_challenge_field]', $html);
+        $this->assertStringContainsString('contact[recaptcha_response_field]', $html);
     }
 
     /** @group ZF-10991 */

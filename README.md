@@ -1,6 +1,6 @@
-Zend Framework 1 - Captcha
-============================
-[![Build Status](https://travis-ci.com/diablomedia/zf1-captcha.svg?branch=master)](https://travis-ci.com/diablomedia/zf1-captcha)
+# Zend Framework 1 - Captcha
+
+[![Build](https://github.com/diablomedia/zf1-captcha/workflows/Build/badge.svg?event=push)](https://github.com/diablomedia/zf1-captcha/actions?query=workflow%3ABuild+event%3Apush)
 [![codecov](https://codecov.io/gh/diablomedia/zf1-captcha/branch/master/graph/badge.svg)](https://codecov.io/gh/diablomedia/zf1-captcha)
 [![Latest Stable Version](https://poser.pugx.org/diablomedia/zendframework1-captcha/v/stable)](https://packagist.org/packages/diablomedia/zendframework1-captcha)
 [![Total Downloads](https://poser.pugx.org/diablomedia/zendframework1-captcha/downloads)](https://packagist.org/packages/diablomedia/zendframework1-captcha)
