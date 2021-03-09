@@ -496,10 +496,13 @@ class Zend_Captcha_Image extends Zend_Captcha_Word
             $w = imagesx($img);
             $h = imagesy($img);
         }
-        $text_color = imagecolorallocate($img, 0, 0, 0);
-        $bg_color   = imagecolorallocate($img, 255, 255, 255);
+        $text_color = (int) imagecolorallocate($img, 0, 0, 0);
+        $bg_color   = (int) imagecolorallocate($img, 255, 255, 255);
         imagefilledrectangle($img, 0, 0, $w - 1, $h - 1, $bg_color);
         $textbox = imageftbbox($fsize, 0, $font, $word);
+        if ($textbox === false) {
+            throw new Zend_Captcha_Exception('Can not get bounding box size');
+        }
         $x       = (int) ($w - ($textbox[2] - $textbox[0])) / 2;
         $y       = (int) ($h - ($textbox[7] - $textbox[1])) / 2;
         imagefttext($img, $fsize, 0, $x, $y, $text_color, $font, $word);
@@ -517,7 +520,7 @@ class Zend_Captcha_Image extends Zend_Captcha_Word
         if (!$img2) {
             throw new Zend_Captcha_Exception('Can not load transformed image');
         }
-        $bg_color = imagecolorallocate($img2, 255, 255, 255);
+        $bg_color = (int) imagecolorallocate($img2, 255, 255, 255);
         imagefilledrectangle($img2, 0, 0, $w - 1, $h - 1, $bg_color);
         // apply wave transforms
         $freq1 = $this->_randomFreq();
@@ -564,7 +567,7 @@ class Zend_Captcha_Image extends Zend_Captcha_Word
                               + $color_y * $frac_x1 * $frac_y
                               + $color_xy * $frac_x * $frac_y);
                 }
-                imagesetpixel($img2, $x, $y, imagecolorallocate($img2, $newcolor, $newcolor, $newcolor));
+                imagesetpixel($img2, $x, $y, (int) imagecolorallocate($img2, $newcolor, $newcolor, $newcolor));
             }
         }
 
