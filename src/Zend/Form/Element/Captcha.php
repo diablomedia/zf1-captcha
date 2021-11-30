@@ -83,6 +83,7 @@ class Zend_Form_Element_Captcha extends Zend_Form_Element_Xhtml
                 $name = $captcha;
             }
 
+            /** @phpstan-var class-string<Zend_Captcha_Adapter> $name */
             $name = $this->getPluginLoader(self::CAPTCHA)->load($name);
             if (empty($options)) {
                 $instance = new $name;

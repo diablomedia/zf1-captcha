@@ -87,9 +87,9 @@ class Zend_Captcha_FigletTest extends PHPUnit\Framework\TestCase
     {
         $html   = $this->element->render($this->getView());
         $expect = sprintf('type="hidden" name="%s\[id\]" value="%s"', $this->element->getName(), $this->captcha->getId());
-        $this->assertRegExp("/<input[^>]*?$expect/", $html, $html);
+        $this->assertMatchesRegularExpression("/<input[^>]*?$expect/", $html, $html);
         $expect = sprintf('type="text" name="%s\[input\]"', $this->element->getName());
-        $this->assertRegExp("/<input[^>]*?$expect/", $html, $html);
+        $this->assertMatchesRegularExpression("/<input[^>]*?$expect/", $html, $html);
     }
 
     /*
@@ -103,7 +103,7 @@ class Zend_Captcha_FigletTest extends PHPUnit\Framework\TestCase
         $form->addElement($this->element);
         $html   = $form->render($this->getView());
         $expect = sprintf('for="comment-%s-input"', $this->element->getName());
-        $this->assertRegExp("/<label [^>]*?$expect/", $html, $html);
+        $this->assertMatchesRegularExpression("/<label [^>]*?$expect/", $html, $html);
     }
 
     public function testTimeoutPopulatedByDefault()

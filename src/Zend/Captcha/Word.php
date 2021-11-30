@@ -80,6 +80,7 @@ abstract class Zend_Captcha_Word extends Zend_Captcha_Base
      * Class name for sessions
      *
      * @var string
+     * @phpstan-var class-string<Zend_Session_Namespace>
      */
     protected $_sessionClass = Zend_Session_Namespace::class;
 
@@ -150,6 +151,7 @@ abstract class Zend_Captcha_Word extends Zend_Captcha_Base
      * Set session class for persistence
      *
      * @param  string $_sessionClass
+     * @phpstan-param class-string<Zend_Session_Namespace> $_sessionClass
      * @return $this
      */
     public function setSessionClass($_sessionClass)
