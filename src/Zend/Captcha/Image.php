@@ -503,8 +503,8 @@ class Zend_Captcha_Image extends Zend_Captcha_Word
         if ($textbox === false) {
             throw new Zend_Captcha_Exception('Can not get bounding box size');
         }
-        $x       = (int) ($w - ($textbox[2] - $textbox[0])) / 2;
-        $y       = (int) ($h - ($textbox[7] - $textbox[1])) / 2;
+        $x       = (int) (($w - ($textbox[2] - $textbox[0])) / 2);
+        $y       = (int) (($h - ($textbox[7] - $textbox[1])) / 2);
         imagefttext($img, $fsize, 0, $x, $y, $text_color, $font, $word);
 
         // generate noise
