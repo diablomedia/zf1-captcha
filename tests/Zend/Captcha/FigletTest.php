@@ -31,6 +31,11 @@
  */
 class Zend_Captcha_FigletTest extends PHPUnit\Framework\TestCase
 {
+    protected $word;
+    protected $element;
+    protected $captcha;
+    protected $id;
+
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -299,6 +304,7 @@ class Zend_Captcha_FigletTest extends PHPUnit\Framework\TestCase
     }
 }
 
+#[AllowDynamicProperties]
 class Zend_Captcha_FigletTest_SessionContainer
 {
     protected static $_word;

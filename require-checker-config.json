@@ -4,6 +4,7 @@
     "static", "self", "parent",
     "array", "string", "int", "float", "bool", "iterable", "callable", "void", "object",
     "imagecreatetruecolor", "imagecreatefrompng", "imagesx", "imagesy", "imagecolorallocate", "imagefilledrectangle",
-    "imageftbbox", "imagefttext", "imagefilledellipse", "imageline", "imagecolorat", "imagesetpixel", "imagepng", "imagedestroy"
+    "imageftbbox", "imagefttext", "imagefilledellipse", "imageline", "imagecolorat", "imagesetpixel", "imagepng", "imagedestroy",
+    "mt_rand"
   ]
 }

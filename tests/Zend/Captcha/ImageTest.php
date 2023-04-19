@@ -32,6 +32,11 @@
 class Zend_Captcha_ImageTest extends PHPUnit\Framework\TestCase
 {
     protected $_tmpDir;
+    protected $word;
+    protected $testDir;
+    protected $element;
+    protected $captcha;
+    protected $id;
 
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -347,9 +352,11 @@ class Zend_Captcha_ImageTest extends PHPUnit\Framework\TestCase
     }
 }
 
+#[AllowDynamicProperties]
 class Zend_Captcha_ImageTest_SessionContainer
 {
     protected static $_word;
+    protected $name;
 
     public function __get($name)
     {

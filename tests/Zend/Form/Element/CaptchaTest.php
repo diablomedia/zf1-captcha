@@ -31,6 +31,9 @@
  */
 class Zend_Form_Element_CaptchaTest extends PHPUnit\Framework\TestCase
 {
+    protected $element;
+    protected $form;
+
     public function setUp(): void
     {
         $this->element = new Zend_Form_Element_Captcha(
@@ -420,6 +423,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit\Framework\TestCase
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Form
  */
+#[AllowDynamicProperties]
 class Zend_Form_Element_CaptchaTest_SessionContainer
 {
     protected static $_word;

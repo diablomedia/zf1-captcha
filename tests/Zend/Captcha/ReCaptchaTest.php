@@ -31,6 +31,10 @@
  */
 class Zend_Captcha_ReCaptchaTest extends PHPUnit\Framework\TestCase
 {
+    protected $word;
+    protected $element;
+    protected $captcha;
+
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -187,6 +191,7 @@ class Zend_Captcha_ReCaptchaTest extends PHPUnit\Framework\TestCase
     }
 }
 
+#[AllowDynamicProperties]
 class Zend_Captcha_ReCaptchaTest_SessionContainer
 {
     protected static $_word;
