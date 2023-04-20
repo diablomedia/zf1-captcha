@@ -17,3 +17,5 @@ parameters:
         -
             message: '#If condition is always true\.#'
             path: './src/Zend/Captcha/Word.php'
+includes:
+    - phpstan-php7.php
