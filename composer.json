@@ -8,19 +8,18 @@
     ],
     "homepage": "http://framework.zend.com/",
     "license": "BSD-3-Clause",
-    "minimum-stability": "dev",
     "require": {
         "php": "^7.4 || ~8.0.0 || ~8.1.0 || ~8.2.0",
-        "diablomedia/zendframework1-exception": "dev-master as 1.0.0",
-        "diablomedia/zendframework1-config": "dev-php-82 as 2.0.0",
-        "diablomedia/zendframework1-loader": "dev-php-82 as 1.0.0",
-        "diablomedia/zendframework1-crypt": "dev-php-82 as 1.0.0",
-        "diablomedia/zendframework1-text": "dev-php-82 as 1.0.0",
-        "diablomedia/zendframework1-form": "dev-php-82 as 1.0.2",
-        "diablomedia/zendframework1-service-recaptcha": "dev-php-82 as 1.0.0",
-        "diablomedia/zendframework1-session": "dev-php-82 as 1.0.0",
-        "diablomedia/zendframework1-validate": "dev-php-82 as 1.0.0",
-        "diablomedia/zendframework1-view": "dev-php-82 as 1.0.3"
+        "diablomedia/zendframework1-exception": "^1.0.0",
+        "diablomedia/zendframework1-config": "^1.0.0 || ^2.0.0",
+        "diablomedia/zendframework1-loader": "^1.0.0",
+        "diablomedia/zendframework1-crypt": "^1.0.0",
+        "diablomedia/zendframework1-text": "^1.0.0",
+        "diablomedia/zendframework1-form": "^1.0.2",
+        "diablomedia/zendframework1-service-recaptcha": "^1.0.0",
+        "diablomedia/zendframework1-session": "^1.0.0",
+        "diablomedia/zendframework1-validate": "^1.0.0",
+        "diablomedia/zendframework1-view": "^1.0.3"
     },
     "autoload": {
         "psr-0": {
