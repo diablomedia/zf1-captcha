@@ -1,6 +1,6 @@
 parameters:
-    checkMissingIterableValueType: false
     level: 7
+    treatPhpDocTypesAsCertain: false
     paths:
         - ./
     excludePaths:
@@ -12,10 +12,27 @@ parameters:
         - '#Call to an undefined method Zend_View_Interface::.+\(\)\.#'
         - '#Call to an undefined method Zend_Form\|Zend_Form_DisplayGroup\|Zend_Form_Element::get.+\(\)\.#'
         -
-            message: '#Negated boolean expression is always false\.#'
-            path: './src/Zend/Captcha/ReCaptcha.php'
-        -
             message: '#If condition is always true\.#'
             path: './src/Zend/Captcha/Word.php'
-includes:
-    - phpstan-php7.php
+        -
+            identifier: missingType.iterableValue
+        -
+            message: '#Parameter \#1 \$width of function imagecreatetruecolor expects int<1, max>, int given\.#'
+            count: 2
+            path: './src/Zend/Captcha/Image.php'
+        -
+            message: '#Parameter \#2 \$height of function imagecreatetruecolor expects int<1, max>, int given\.#'
+            count: 2
+            path: './src/Zend/Captcha/Image.php'
+        -
+            message: '#Parameter \#2 \$red of function imagecolorallocate expects int<0, 255>, int given\.#'
+            count: 1
+            path: './src/Zend/Captcha/Image.php'
+        -
+            message: '#Parameter \#3 \$green of function imagecolorallocate expects int<0, 255>, int given\.#'
+            count: 1
+            path: './src/Zend/Captcha/Image.php'
+        -
+            message: '#Parameter \#4 \$blue of function imagecolorallocate expects int<0, 255>, int given\.#'
+            count: 1
+            path: './src/Zend/Captcha/Image.php'
