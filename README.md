@@ -6,4 +6,7 @@
 [![Total Downloads](https://poser.pugx.org/diablomedia/zendframework1-captcha/downloads)](https://packagist.org/packages/diablomedia/zendframework1-captcha)
 [![License](https://poser.pugx.org/diablomedia/zendframework1-captcha/license)](https://packagist.org/packages/diablomedia/zendframework1-captcha)
 
+> [!WARNING]  
+> We've archived this repo as we're no longer using or maintaining Zend Framework 1
+
 This is just the Zend_Captcha, Zend_Form_Element_Captcha and Zend_Form_Decorator_Captcha components extracted from our fork of the Zend Framework 1 repo (https://github.com/diablomedia/zf1).
